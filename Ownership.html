@@ -10,6 +10,7 @@
         display: block;
        margin: 30px 300px;
        border: 4px double black;
+       padding: 20px;
     }
     .navigation {
         padding: 20px;
@@ -21,14 +22,48 @@
     }
 
     .update {
-        margin: 20px;
         display: flex;
         align-items: center;
 
     }
 
-    .update__text {
-        margin-right: 20px;
+    .title {
+        background-color: #72767a;
+        color: white;
+        padding: 20px;
+        font-weight: normal;
+    }
+
+    .section {
+        margin: 20px;
+    }
+
+    .section__yes {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .section__select {
+        margin-left: 20px;
+        display: none;
+    }
+
+    #personal_yes:checked ~ .section__select{
+        display: block;
+
+    }
+
+    .section__yes {
+        margin-top: 15px;
+    }
+    
+    button {
+        margin-left: 20px;
+    }
+
+    .PS {
+        margin: 30px 300px;
     }
     </style>
 </head>
@@ -38,15 +73,39 @@
             <a href="" class="navigation__items">Сохраняющие право владения и пользования</a>
             <a href="" class="navigation__items">Принадлежность имущетсва</a>
             <a href="" class="navigation__items">Вид оплаты</a>
-            <a href="" class="navigation__items">и т.д. Закладки(пункты договора) </a>
+            <a href="" class="navigation__items">и т.д. Закладки (соответсвующие пунктам договора, которые можно добавлять/удалять/менять последовательность, в конкретном действии.) </a>
         </nav>
-        <div>
-            <p>Есть ли, лица сохраняющие право владеть и пользоватся имуществом?</p>
+        <h2 class="title">
+            Пункт: Есть ли лица, сохраняющие право владеть и пользоватся имуществом?
+        </h2>
+        <div class="section">
+            <input type="radio" name="Ownership" id="personal_not"><span>Нет</span>
+            <div class="section__yes">
+                <input type="radio" name="Ownership" id="personal_yes"><span>Есть</span>
+                <div class="section__select">
+                    <select class="section__list">
+                        <option class="list__elem">Выпадающий список всех лиц из вкладки "Лица" в виде "Иванов Иван Иванович (Продавец) с возможностью множественного выбора и выбором всех"</option>
+                        <option class="list__elem">Иное (для добавлени лиц вручную)</option>
+                        <option class="list__elem">Добавленные ФИО должны отображатся </option>
+                    </select>
+                    <button>Добавить</button>
+                </div>
+                <div></div>
+            </div>  
         </div>
         <div class="update">
         <textarea  cols="150" rows="5" class="update__text"></textarea>
         <button class="update__button">Обновить</button>
         </div>
-    </div>    
+    </div>
+    <h2 class="PS">
+        Не судите строго. Чтобы подытожить вчерашнюю беседу и зафиксировать итог, быстро накидал саму идею концепта и логику. 
+        Стилизация  формы как в задолженности в ИН., закладок как закладки в нот. дейсвиях.
+        Это в принципе первый макет и есть.
+        В конструкторе шаблонов нужна возможность добавлять блоки на каждое из выбранных условий пользователя на форме.
+        Если есть вопросы, пишите. Спасибо.
+    </h2>
+
+    
 </body>
 </html>
